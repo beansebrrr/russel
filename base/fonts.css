@@ -1,0 +1,38 @@
+@font-face {
+  font-family: "Domine";
+  font-weight: 400;
+  font-display: swap;
+  src: url(./fonts/Domine-Regular.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Domine";
+  font-weight: 700;
+  src: url(./fonts/Domine-Bold.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-weight: 400;
+  src: url(./fonts/Raleway-Regular.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-weight: 700;
+  src: url(./fonts/Raleway-Bold.woff2) format("woff2");
+}
+
+:root {
+  font-family: 'Raleway', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Domine', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin-top: 0;
+}
+
+.title {
+  font-size: 2rem;
+  font-family: unset;
+}

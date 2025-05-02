@@ -1,1 +1,29 @@
 @import url(./base/base.css);
+
+.hero {
+  height: 100vh;
+  background:
+    radial-gradient(transparent 50%, #000000b0),
+    url(./images/hero-background.jpg);
+  background-position: center;
+  color: var(--text-white);
+}
+.hero__text,
+.hero__subtext {
+  margin: 0;
+  left: var(--pad-inline);
+  text-shadow: #000000ff 0 4px 1rem;
+}
+
+.hero__text {
+  font-size: 2.5rem;
+  position: absolute;
+  anchor-name: --hero__text--anchor;
+  bottom: 20%;
+}
+
+.hero__subtext {
+  font-size: 1.25rem;
+  position: absolute;
+  top: anchor(--hero__text--anchor bottom);
+}
