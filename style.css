@@ -1,29 +1,55 @@
-@import url(./base/base.css);
+@import url(/base/base.css);
 
 .hero {
-  height: 100vh;
+  min-height: 100vh;
   background:
     radial-gradient(transparent 50%, #000000b0),
     url(./images/hero-background.jpg);
   background-position: center;
   color: var(--text-white);
-}
-.hero__text,
-.hero__subtext {
-  margin: 0;
-  left: var(--pad-inline);
-  text-shadow: #000000ff 0 4px 1rem;
+  
+  .hero__text,
+  .hero__subtext {
+    margin: 0;
+    left: var(--pad-inline);
+    text-shadow: #000000ff 0 4px 1rem;
+  }
+  
+  .hero__text {
+    font-size: 2.5rem;
+    position: absolute;
+    anchor-name: --hero__text--anchor;
+    bottom: 15%;
+  }
+  
+  .hero__subtext {
+    font-size: 1.25rem;
+    position: absolute;
+    top: anchor(--hero__text--anchor bottom);
+  }
 }
 
-.hero__text {
-  font-size: 2.5rem;
-  position: absolute;
-  anchor-name: --hero__text--anchor;
-  bottom: 20%;
+.overview {
+  min-height: 90vh;
+  background: url(./images/workstation.jpg);
+  box-shadow: inset #000000aa 0 0 10rem;
 }
 
-.hero__subtext {
-  font-size: 1.25rem;
-  position: absolute;
-  top: anchor(--hero__text--anchor bottom);
+.call-to-action {
+  min-height: 90vh;
+  background: url(./images/lady-wearing-rings.jpg);
+}
+
+.floater {
+  display: grid;
+  grid-template-columns: subgrid;
+  background: hsla(20, 100%, 100%, 0.700);
+  backdrop-filter: blur(0.5rem);
+  box-shadow: hsla(0, 0%, 0%, 0.6) 0 4px 32px 12px;
+  color: var(--text-black);
+  clip-path: inset(-2rem -100%);
+
+  >* {
+    grid-column: content;
+  }
 }

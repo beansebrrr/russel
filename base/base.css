@@ -1,7 +1,6 @@
 @import url(./fonts.css);
 
 :root {
-
   --text-white: #ffffff;
   --text-black: #000000;
   --text-accent: #ff5500;
@@ -21,13 +20,42 @@ body {
   background-color: var(--main-white);
 }
 
+.mini-link {
+  --_clr-link: var(--clr-link, var(--text-accent));
+  color: var(--_clr-link);
+  text-decoration: none;
+  font-size: 0.95em;
+  position: relative;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 1.5px;
+    border-radius: 0.75px;
+    left: 50%;
+    transform: -50%;
+    background-color: var(--_clr-link);
+    transition:
+      width 250ms ease,
+      left 250ms ease,
+      transform 250ms ease;
+  }
+  &:hover::before {
+    width: 100%;
+    left: 0;
+    transform: 0;
+  }
+}
+
 /*
   Main content padding and such
   inspired from Kevin Powell
   (https://youtu.be/c13gpBrnGEw)
 */
 .content-grid {
-  --content-max-width: 95ch;
+  --content-max-width: 85ch;
   --breakout-max-width: 110ch;
   --breakout-size: calc((var(--breakout-max-width) - var(--content-max-width)) / 2);
 
@@ -51,43 +79,44 @@ body {
   grid-column: content;
 }
 
-.content-grid>.breakout {
-  grid-column: breakout;
-  display: grid;
-  grid-template-columns: subgrid;
-}
-
-.content-grid>.breakout>* {
+.content-grid>.breakout,
+.full-width>.breakout {
   grid-column: breakout;
 }
 
-.content-grid>.breakout>.content {
-  grid-column: content;
-}
-
-.content-grid>.full-width {
+.content-grid>.full-width,
+.full-width>.full-width {
   grid-column: full-width;
 }
 
-.content-grid>.padding-y {
+.padding-y {
   padding-block: 2rem;
 }
+.margin-y {
+  margin-block: 2rem;
+}
 
-/* Header styling */
-header {
-  --header-bg: var(--main-white);
-  --_clr-text: var(--clr-text, var(--text-black));
-  --_header-shadow: #00000060 0 0 32px;
-  
-  width: calc(100% - (var(--pad-inline) * 2));
-  background: var(--header-bg);
-  box-shadow: var(--_header-shadow);
-  color: var(--_clr-text);
+/* Header and Footer styling */
+header,
+footer {
   padding-inline: var(--pad-inline);
   padding-block: 1.5rem;
+  --_clr-text: var(--clr-text, var(--text-black));
+  --_shadow: #00000060 0 8px 32px;
+  
+  color: var(--_clr-text);
+  box-shadow: var(--_shadow);
+}
+
+header {
+  --_header-bg: var(--main-white);
+
+  width: calc(100% - (var(--pad-inline) * 2));
+  background: var(--_header-bg);
   display: grid;
   grid-template-columns: [left] 1fr [center] auto [right] 1fr;
   align-items: center;
+  z-index: 10;
   
   /* Alignment */
   .header--left {
@@ -106,7 +135,7 @@ header {
 
 /* Mainly for the homepage, lets the header always stay on screen */
 header.sticky {
-  --header-bg: linear-gradient(#000000a0, transparent);
+  --_header-bg: linear-gradient(#000000a0, transparent);
   --clr-text: var(--text-white);
   box-shadow: unset;
   position: fixed;
@@ -118,14 +147,24 @@ header.sticky {
   }
   
   &:hover {
-    --header-bg: var(--main-white);
+    --_header-bg: var(--main-white);
     --clr-text: var(--text-black);
-    box-shadow: var(--_header-shadow);
+    box-shadow: var(--_shadow);
   }
 
   &:hover .logo {
     content: url(./assets/logo-black.svg);
   }
+}
+
+/* Footer */
+footer {
+  background-color: var(--main-black);
+  --clr-text: var(--text-white);
+
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
 }
 
 /* List of links in the header */
@@ -139,7 +178,7 @@ header.sticky {
   place-items: center;
 
   a {
-    color: inherit;
+    color: unset;
     text-decoration: none;
     transition: color 200ms linear;
   }
@@ -215,6 +254,26 @@ header.sticky {
   }
 }
 
+/* Grids, also found in homescreen */
+.grid {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 0.5rem;
+
+  li {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
 .card {
   --_text-hover: var(--text-hover, var(--text-accent));
 
@@ -237,7 +296,7 @@ header.sticky {
     scale: 1;
     transition: scale 500ms ease;
   }
-  img:hover {
+  &:hover img {
     scale: 1.10;
   }
 
