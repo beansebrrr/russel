@@ -7,6 +7,7 @@
   <title>russel</title>
   <link rel="stylesheet" href="style.css">
   <link rel="shortcut icon" href="https://fav.farm/✨" type="image/x-icon">
+  <script src="/base/base.js" defer></script>
   <script src="script.js" defer></script>
 </head>
 <body>
@@ -23,25 +24,36 @@
       <li><a href="/about">About</a></li>
       <li><a href="/workshop">The workshop</a></li>
     </ul>
-    <a href="/" class="header--center"><img class="logo" src="/base/images/logo-black.svg" alt="Russel"></a>
+    <a href="/" class="header--center"><img class="logo" src="/base/assets/logo-black.svg" alt="Russel"></a>
     <ul class="nav-list header--right">
       <li><a href="#">
         <svg height="24px" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"></path>
-        </svg>
+        </svg><span class="label">Search</span>
       </a></li>
       <li><a href="#">
         <svg height="24px" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"></path>
-        </svg>
+        </svg><span class="label">Favourites</span>
       </a></li>
       <li><a href="#">
         <svg height="24px" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"></path>
-        </svg>
+        </svg><span class="label">Account</span>
       </a></li>
     </ul>
+    <button class="sidebar-open"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+    </svg>
+    </button>
+    <aside class="hidden">
+      <button class="sidebar-close"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+      </svg>
+      </button>
+    </aside>
   </header>
+
   <main class="content-grid">
     <section class="full-width breakout hero">
       <h1 class="hero__text">Love letters in stone</h1>
@@ -49,7 +61,7 @@
     </section>
 
     <section class="breakout padding-y">
-      <h1 class="title">New releases! </h1>
+      <h1 class="title">New releases!</h1>
       <ul class="horizontal-scroller snap">
         <li class="card">
           <div class="img-container">
@@ -83,7 +95,7 @@
 
     <section class="breakout padding-y">
       <h1 class="title">See what we've made!</h1>
-      <ul class="grid grid--categories">
+      <ul class="flex-grid">
         <li><a href="/jewelry#rings" class="card">
           <div class="img-container">
             <img src="./images/helix-ring.jpg" alt="Rings"></div>
@@ -107,16 +119,14 @@
       </ul>
     </section>
     <section class="full-width call-to-action">
-      <div class="breakout margin-y padding-y floater">
-        <form action="">
-          <h1>Have we caught your interest?</h1>
-          <p class="subtext">Make an inquiry with us today!</p>
-
-          <input type="text" name="Name" id="nameInput">
-          <input type="email" name="Email" id="emailInput">
-          <textarea name="details" id="detailsInput" rows="10"></textarea>
-        </form>
-
+      <div class="portion padding-y">
+        <h1 class="portion__title">Have we caught your interest?</h1>
+        <p class="portion__subtext">
+          We offer custom-made, handcrafted jewelry sets that
+          encapsulates a memory. Work with us today and let's
+          write your story in stone!
+        </p>
+        <button>Get in touch</button>
       </div>
     </section>
   </main>

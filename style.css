@@ -38,18 +38,46 @@
 .call-to-action {
   min-height: 90vh;
   background: url(./images/lady-wearing-rings.jpg);
+  box-shadow: inset #00000040 0 0 5rem 1rem;
+
+  .portion {
+    background-color: hsla(20, 100%, 55%, 0.75);
+    color: var(--text-white);
+    padding-inline: var(--pad-inline);
+    box-shadow: hsla(0, 100%, 10%, 0.5) 0 0 24px;
+    clip-path: inset(0 -24px 0 0);
+    grid-column: full-width;
+    width: calc(50% - (var(--pad-inline) * 2));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  button {
+    --btn-color: var(--main-white);
+    --btn-text: var(--text-black);
+    margin-block: 2rem;
+  }
 }
 
-.floater {
-  display: grid;
-  grid-template-columns: subgrid;
-  background: hsla(20, 100%, 100%, 0.700);
-  backdrop-filter: blur(0.5rem);
-  box-shadow: hsla(0, 0%, 0%, 0.6) 0 4px 32px 12px;
-  color: var(--text-black);
-  clip-path: inset(-2rem -100%);
+.portion__title,
+.portion__subtext {
+  margin: 0.25rem;
+  text-align: center;
+}
 
-  >* {
-    grid-column: content;
+.portion__title {
+  font-size: 2rem;
+}
+
+
+
+@media screen and (max-width: 1100px) {
+  .call-to-action>.portion {
+    margin-block: 1rem;
+    grid-column: breakout;
+    width: unset;
+    clip-path: unset;
   }
 }
