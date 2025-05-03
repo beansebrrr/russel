@@ -1,0 +1,56 @@
+@import url(/base/base.css);
+
+.banner {
+  --_bg-image: var(--bg-image, url(/images/three-rings.jpg));
+  --_clr-text: var(--clr-text, var(--text-white));
+  --_clr-text-shadow: var(--clr-text-shadow, var(--text-black));
+
+  background: var(--_bg-image);
+  color: var(--_clr-text);
+  box-shadow: inset var(--_clr-text-shadow) 0 0 24px -10px;
+  background-size: cover;
+  background-position: center;
+  place-items: center center;
+  padding: 2rem var(--pad-inline);
+  z-index: -1;
+  
+  h1 {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    font-size: 2em;
+    margin: 0;
+    text-shadow: var(--_clr-text-shadow) 0 1px 8px;
+  }
+}
+
+.shop-grid {
+  background-color: var(--main-white);
+  margin: 0;
+  padding: 0;
+  padding-block: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 24%));
+  grid-auto-rows: auto;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.subtext {
+  text-align: center;
+  font-size: 0.9em;
+  color: #555555;
+}
+
+#rings {
+  --bg-image: url(/images/three-rings.jpg);
+}
+#bracelets {
+  --bg-image: url(/images/beaded-bracelets.jpg);
+}
+#necklaces {
+  --bg-image: url(/images/necklace-on-sheets.jpg);
+}
+#earrings {
+  --bg-image: url(/images/earrings-on-notebook.jpg)
+}

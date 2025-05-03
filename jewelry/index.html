@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>russel</title>
+  <title>jewelry</title>
   <link rel="stylesheet" href="style.css">
   <link rel="shortcut icon" href="https://fav.farm/✨" type="image/x-icon">
-  <script src="/base/base.js" defer></script>
   <script src="script.js" defer></script>
+  <script src="/base/base.js" defer></script>
 </head>
 <body>
-  <header class="sticky">
+  <header>
     <ul class="nav-list header--left">
       <li class="dropdown"><a href="/jewelry">Jewelry</a>
         <ul class="dropdown__menu">
@@ -53,31 +53,32 @@
       </button>
     </aside>
   </header>
-
   <main class="content-grid">
-    <section class="full-width hero">
-      <span>
-        <h1 class="hero__text">Love letters in stone</h1>
-        <p class="hero__subtext">A story that's uniquely yours, an accessory that's uniquely yours</p>
-      </span>
-    </section>
-
-    <section class="breakout padding-y">
-      <h1 class="title">New releases!</h1>
-      <ul class="horizontal-scroller snap">
+    <section class="full-width" id="rings">
+      <div class="full-width breakout banner">
+        <h1 class="title">RINGS</h1>
+      </div>
+      <ul class="breakout shop-grid">
         <li class="card">
           <div class="img-container">
-            <img src="./images/teardrop-earrings.jpg" alt="Honeydrop Earrings"></div>
-            <h3 class="card__title">Honeydrop</h3>
+            <img src="/images/topaz-ring.jpg" alt="Pangako"></div>
+            <h3 class="card__title">Pangako</h3>
           <p class="card__subtitle">
-            Droplet-shaped gemstones on 14K yellow gold</p>
+            Oval topaz on 18k yellow gold</p>
         </li>
         <li class="card">
           <div class="img-container">
-            <img src="/images/pearl-vines.jpg" alt="Pearl Vines"></div>
-            <h3 class="card__title">Pearl Vines</h3>
+            <img src="/images/intertwine.jpg" alt="Intertwine"></div>
+            <h3 class="card__title">Intertwine</h3>
           <p class="card__subtitle">
-            Gold bracelet with pearls spiraling around the band</p>
+            Silver and gold bands spiraling into a ring</p>
+        </li>
+        <li class="card">
+          <div class="img-container">
+            <img src="/images/flower-ring.jpg" alt="Rosas"></div>
+            <h3 class="card__title">Blossom</h3>
+          <p class="card__subtitle">
+            Diamonds arranged in a floral pattern in 18k yellow gold</p>
         </li>
         <li class="card">
           <div class="img-container">
@@ -86,6 +87,41 @@
           <p class="card__subtitle">
             Silver and gold bands wrapping around a 1.0c diamond</p>
         </li>
+      </ul>
+    </section>
+    <section class="full-width" id="bracelets">
+      <div class="full-width banner">
+        <h1 class="title">BRACELETS</h1>
+      </div>
+      <ul class="breakout shop-grid">
+        <li class="card">
+          <div class="img-container">
+            <img src="/images/teal-heart-bracelet.jpg" alt="Promenade"></div>
+            <h3 class="card__title">Promenade</h3>
+          <p class="card__subtitle">
+            Silver bracelet with a heart-shaped blue gemstone</p>
+        </li>
+        <li class="card">
+          <div class="img-container">
+            <img src="/images/council-bracelet.jpg" alt="Council"></div>
+            <h3 class="card__title">Council</h3>
+          <p class="card__subtitle">
+            Dual layered bracelet with 5 diamonds attached to a gold chain</p>
+        </li>
+        <li class="card">
+          <div class="img-container">
+            <img src="/images/pearl-vines.jpg" alt="Pearl Vines"></div>
+            <h3 class="card__title">Pearl Vines</h3>
+          <p class="card__subtitle">
+            Gold bracelet with pearls spiraling around the band</p>
+        </li>
+      </ul>
+    </section>
+    <section class="full-width" id="necklaces">
+      <div class="full-width banner">
+        <h1 class="title">NECKLACES</h1>
+      </div>
+      <ul class="breakout shop-grid">
         <li class="card">
           <div class="img-container">
             <img src="/images/moon-necklace.jpg" alt="De Lune"></div>
@@ -95,71 +131,47 @@
         </li>
         <li class="card">
           <div class="img-container">
-            <img src="/images/topaz-ring.jpg" alt="Pangako"></div>
-            <h3 class="card__title">Pangako</h3>
+            <img src="/images/blue-necklace.jpg" alt="Navy"></div>
+            <h3 class="card__title">Navy</h3>
           <p class="card__subtitle">
-            Oval topaz on 18k yellow gold</p>
+            Heart-cut sapphire on a silver chain necklace</p>
+        </li>
+        <li class="card">
+          <div class="img-container">
+            <img src="/images/little-girl.jpg" alt="Little Girl"></div>
+            <h3 class="card__title">Little Girl</h3>
+          <p class="card__subtitle">
+            Dual-layer gold necklace with a cross and a pendant of a little girl</p>
+        </li>
+        <li class="card">
+          <div class="img-container">
+            <img src="/images/tear-necklace.jpg" alt="Luha"></div>
+            <h3 class="card__title">Luha</h3>
+          <p class="card__subtitle">
+            Teardrop-shaped diamond on a silver chain</p>
         </li>
       </ul>
     </section>
-
-    <section class="overview full-width">
-      <div class="padding-y">
-        <h1>From humble beginnings</h1>
-        <p>
-          This is Russel&trade;, a small jewelry studio that
-          creates personal, meaningful accessories. We believe
-          that stories make up a huge part of the craft, so
-          we built our team to bring these memories to life
-          through the art of jewelry-making.
-        </p>
-        <p>
-          Each piece is designed and handcrafted with care—often
-          inspired by memories and the stories my customers
-          share with us. We carry these stories while making our
-          pieces in the workshop&mdash;making sure the origin
-          isn't lost in the process.
-        </p>
-        <a href="" class="mini-link">Learn more about us...</a>
+    <section class="full-width" id="earrings">
+      <div class="full-width banner">
+        <h1 class="title">EARRINGS</h1>
       </div>
-    </section>
-
-    <section class="breakout padding-y">
-      <h1 class="title">See what we've made!</h1>
-      <ul class="flex-grid">
-        <li><a href="/jewelry#rings" class="card">
+      <ul class="breakout shop-grid">
+        <li class="card">
           <div class="img-container">
-            <img src="./images/flower-ring.jpg" alt="Rings"></div>
-          <h3 class="card__title">Rings</h3>
-        </a></li>
-        <li><a href="/jewelry#bracelets" class="card">
+            <img src="/images/helix-earrings.jpg" alt="Regalo"></div>
+          <h3 class="card__title">Regalo</h3>
+          <p class="card__subtitle">Gold earrings with a spiral pattern</p>
+        </li>
+        <li class="card">
           <div class="img-container">
-            <img src="./images/bracelet-closeup.jpg" alt="Bracelets"></div>
-          <h3 class="card__title">Bracelets</h3>
-        </a></li>
-        <li><a href="/jewelry#necklaces" class="card">
-          <div class="img-container">
-            <img src="./images/blue-necklace.jpg" alt="Necklaces"></div>
-          <h3 class="card__title">Necklaces</h3>
-        </a></li>
-        <li><a href="/jewelry#earrings" class="card">
-          <div class="img-container">
-            <img src="./images/helix-earrings.jpg" alt="Earrings"></div>
-          <h3 class="card__title">Earrings</h3>
-        </a></li>
+            <img src="/images/teardrop-earrings.jpg" alt="Honeydrop"></div>
+          <h3 class="card__title">Honeydrop</h3>
+          <p class="card__subtitle">Droplet-shaped gemstones on 14K yellow gold</p>
+        </li>
       </ul>
     </section>
-    <section class="full-width call-to-action">
-      <div class="portion padding-y">
-        <h1 class="portion__title">Have we caught your interest?</h1>
-        <p class="portion__subtext">
-          We offer custom-made, handcrafted jewelry sets to
-          encapsulate a memory. Work with us today and let's
-          write your story in stone!
-        </p>
-        <button>Get in touch</button>
-      </div>
-    </section>
+    <p class="subtext">Keep an eye out for more products in the future 🧡</p>
   </main>
   <footer>
     <a href="/"><img src="/base/assets/logo-small.svg" alt="Russel"></a>

@@ -27,6 +27,10 @@ body {
   background-color: var(--main-white);
 }
 
+main {
+  z-index: -1;
+}
+
 button {
   --_btn-color: var(--btn-color, var(--accent-orange));
   --_btn-text: var(--btn-text, var(--text-white));
@@ -83,8 +87,6 @@ button:active {
   --content-max-width: 85ch;
   --breakout-max-width: 110ch;
   --breakout-size: calc((var(--breakout-max-width) - var(--content-max-width)) / 2);
-
-  z-index: -1;
 }
 
 .content-grid,
@@ -96,6 +98,10 @@ button:active {
     [content-start] min(100% - (var(--pad-inline) * 2), var(--content-max-width)) [content-end]
     minmax(0, var(--breakout-size)) [breakout-end]
     minmax(var(--pad-inline), 1fr) [full-width-end];
+}
+
+.full-width.breakout {
+  grid-column: breakout;
 }
 
 .content-grid>:not(.full-width),
@@ -215,8 +221,9 @@ footer {
 
 /* Navigation sidebar (for smaller screens) */
 aside {
+  display: none;
   padding-block: 2rem;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   height: 100vh;
@@ -224,10 +231,12 @@ aside {
   background-color: #ffffff99;
   backdrop-filter: blur(1rem);
   box-shadow: var(--_shadow);
-  transition: transform 500ms ease;
+  transition: transform 300ms ease, visibility 300ms ease;
+  z-index: inherit;
   
   &.hidden {
     transform: translateX(100%);
+    visibility: hidden;
   }
 }
 
@@ -315,6 +324,7 @@ aside .dropdown:hover .dropdown__menu {
   flex-direction: column;
   transition: opacity 300ms ease;
   visibility: hidden;
+  z-index: 10;
 
   background-color: var(--main-white);
   
@@ -393,17 +403,18 @@ aside .dropdown:hover .dropdown__menu {
   --_text-hover: var(--text-hover, var(--text-accent));
 
   width: 100%;
+  max-height: fit-content;
   display: block;
-  margin: 0;
+  margin: 0 0 1rem 0;
   padding: 0;
   text-align: center;
 
   .img-container {
     aspect-ratio: 1/1;
     width: 100%;
+    margin-bottom: 0.75rem;
     display: flex;
     place-content: center;
-    object-fit: cover;
     overflow: hidden;
   }
 
@@ -416,10 +427,9 @@ aside .dropdown:hover .dropdown__menu {
   }
 
   .card__title, .card__subtitle {
-    margin: 0.5rem;
+    margin: 0.15em;
     transition: color 200ms ease;
   }
-
   .card__subtitle {
     font-size: 0.9rem;
   }
@@ -442,5 +452,8 @@ aside .dropdown:hover .dropdown__menu {
     .sidebar-open {
       display: block;
     }
+  }
+  aside {
+    display: block;
   }
 }
