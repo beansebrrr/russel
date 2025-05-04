@@ -1,5 +1,6 @@
 @import url(./fonts.css);
 
+/* Color variables */
 :root {
   --main-white: #ffffff;
   --main-black: #222222;
@@ -16,21 +17,25 @@
   box-sizing: content-box;
 }
 
+/* When you highlight text, it uses a different color now */
 ::selection {
   background-color: var(--accent-gold);
   color: var(--text-black);
 }
 
+/* Setup */
 body {
   margin: 0;
   padding: 0;
   background-color: var(--main-white);
 }
 
+/* So that the header (and sidebar) will show properly */
 main {
   z-index: -1;
 }
 
+/* Default button styling */
 button {
   --_btn-color: var(--btn-color, var(--accent-orange));
   --_btn-text: var(--btn-text, var(--text-white));
@@ -49,11 +54,13 @@ button:active {
   --btn-text: var(--accent-gold) !important;
 }
 
+/* I only used it on the "Learn more about us" link */
 .mini-link {
   --_clr-link: var(--clr-link, var(--text-accent));
   color: var(--_clr-link);
   text-decoration: none;
   font-size: 0.95em;
+  font-weight: 700;
   position: relative;
   
   &::before {
@@ -75,6 +82,20 @@ button:active {
     width: 100%;
     left: 0;
     transform: 0;
+  }
+}
+
+.socials {
+  display: flex;
+  fill: var(--text-white);
+  gap: 2rem;
+
+  svg {
+    height: 2rem;
+  }
+
+  svg:hover {
+    fill: var(--main-white--hover);
   }
 }
 
@@ -123,6 +144,7 @@ button:active {
   grid-column: content;
 }
 
+/* Optional padding */
 .padding-y {
   padding-block: 2rem;
 }
@@ -271,6 +293,7 @@ aside {
   }
 }
 
+/* List of links in the sidebar */
 aside .nav-list {
   --clr-text: var(--text-black);
   text-align: end;

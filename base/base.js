@@ -1,20 +1,27 @@
-const navlists = document.querySelectorAll("header .nav-list")
-const sidebar = document.querySelector("aside")
-const sidebarOpen = document.querySelector(".sidebar-open")
-const sidebarClose = document.querySelector(".sidebar-close")
+function setupSidebar(headerSelector) {
+  // Select the appropriate html elements
+  const headerElement = document.querySelector(headerSelector)
+  const navLists = headerElement.querySelectorAll("ul.nav-list")
+  const sidebar = headerElement.querySelector("aside")
+  const sidebarOpen = headerElement.querySelector(".sidebar-open")
+  const sidebarClose = headerElement.querySelector(".sidebar-close")
 
-navlists.forEach(navlist => {
-  const clone = navlist.cloneNode(true)
-  clone.classList = ''
-  clone.classList.add("nav-list")
+  // Select all the navLists and append it to the sidebar
+  navLists.forEach(navList => {
+    const clone = navList.cloneNode(true)
+    clone.classList = ''
+    clone.classList.add("nav-list")
+  
+    sidebar.appendChild(clone)
+  })
+  
 
-  sidebar.appendChild(clone)
-})
+  // Give functionality to the open/close buttons
+  sidebarOpen.addEventListener("click", () =>
+    sidebar.classList.remove("hidden"))
+  
+  sidebarClose.addEventListener("click", () => 
+    sidebar.classList.add("hidden"))
+}
 
-sidebarOpen.addEventListener("click", () => {
-  sidebar.classList.remove("hidden")
-})
-
-sidebarClose.addEventListener("click", () => {
-  sidebar.classList.add("hidden")
-})
+setupSidebar("header")

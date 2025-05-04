@@ -1,5 +1,9 @@
 @import url(/base/base.css);
 
+:root {
+  scroll-behavior: smooth;
+}
+
 .banner {
   --_bg-image: var(--bg-image, var(--accent-orange));
   --_clr-text: var(--clr-text, var(--text-white));

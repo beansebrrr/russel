@@ -19,12 +19,15 @@ section:not(.floater--container),
   background-color: var(--accent-orange);
   color: var(--text-white);
   place-items: center;
-  gap: 1rem;
+  row-gap: 1rem;
 
   --btn-color: var(--main-white);
   --btn-text: var(--accent-orange);
 
-  >h1 {
+  >h1, >p {
     margin: 0;
+  }
+  button {
+    margin-block: 1.5rem;
   }
 }
