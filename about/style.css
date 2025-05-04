@@ -1,0 +1,30 @@
+@import url(/base/base.css);
+
+section:not(.floater--container),
+.floater--block {
+  padding-block: 2rem;
+}
+
+.history {
+  --background: url(/images/workstation-2.jpg);
+  --block-background: hsla(20, 100%, 50%, 0.75);
+  --clr-text: var(--text-white);
+
+  h1 {
+    margin-top: 0;
+  }
+}
+
+.newsletter {
+  background-color: var(--accent-orange);
+  color: var(--text-white);
+  place-items: center;
+  gap: 1rem;
+
+  --btn-color: var(--main-white);
+  --btn-text: var(--accent-orange);
+
+  >h1 {
+    margin: 0;
+  }
+}

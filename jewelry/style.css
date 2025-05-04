@@ -1,7 +1,7 @@
 @import url(/base/base.css);
 
 .banner {
-  --_bg-image: var(--bg-image, url(/images/three-rings.jpg));
+  --_bg-image: var(--bg-image, var(--accent-orange));
   --_clr-text: var(--clr-text, var(--text-white));
   --_clr-text-shadow: var(--clr-text-shadow, var(--text-black));
 
@@ -13,6 +13,7 @@
   place-items: center center;
   padding: 2rem var(--pad-inline);
   z-index: -1;
+  height: fit-content;
   
   h1 {
     text-align: center;

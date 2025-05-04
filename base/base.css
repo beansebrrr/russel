@@ -100,12 +100,7 @@ button:active {
     minmax(var(--pad-inline), 1fr) [full-width-end];
 }
 
-.full-width.breakout {
-  grid-column: breakout;
-}
-
 .content-grid>:not(.full-width),
-.content-grid>.content,
 .full-width>:not(.full-width) {
   grid-column: content;
 }
@@ -118,6 +113,14 @@ button:active {
 .content-grid>.full-width,
 .full-width>.full-width {
   grid-column: full-width;
+}
+
+.content-grid>.full-width.breakout>* {
+  grid-column: breakout;
+}
+
+.content-grid>.breakout>.content {
+  grid-column: content;
 }
 
 .padding-y {
@@ -435,6 +438,38 @@ aside .dropdown:hover .dropdown__menu {
   }
 }
 
+.floater--container {
+  --_background: var(--background, var(--accent-orange));
+  --_block-background: var(--block-background, var(--main-white--hover));
+  --_clr-text: var(--clr-text, var(--text-black));
+
+  background: var(--_background);
+  color: var(--_clr-text);
+}
+
+.floater--container>.floater--block {
+  background: var(--_block-background);
+  padding-inline: var(--pad-inline);
+  box-shadow: hsla(0, 100%, 10%, 0.5) 0 0 24px;
+  clip-path: inset(0 -24px 0 0);
+  width: calc(50% - (var(--pad-inline) * 2));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  grid-column: full-width;
+
+  .floater--block__title,
+  .floater--block__subtext {
+    margin: 0.25rem;
+    text-align: center;
+  }
+  
+  .floater--block__title {
+    font-size: 2rem;
+  }
+}
+
 .card:hover .card__title,
 .card:hover .card__subtitle {
   color: var(--_text-hover);
@@ -455,5 +490,14 @@ aside .dropdown:hover .dropdown__menu {
   }
   aside {
     display: block;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .floater--container>.floater--block {
+    margin-block: 1rem;
+    grid-column: breakout;
+    width: unset;
+    clip-path: unset;
   }
 }
