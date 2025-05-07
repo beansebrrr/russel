@@ -39,8 +39,3 @@ h1, h2, h3 {
   font-family: 'Domine', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   margin-top: 0;
 }
-
-.title {
-  font-size: 2rem;
-  font-family: unset;
-}

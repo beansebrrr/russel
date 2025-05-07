@@ -12,9 +12,7 @@
   --text-black: #000000;
   --text-accent: var(--accent-orange);
 
-  --pad-inline: min(8%, 5rem);
-
-  box-sizing: content-box;
+  --pad-inline: max(8%, 1rem);
 }
 
 /* When you highlight text, it uses a different color now */
@@ -33,6 +31,10 @@ body {
 /* So that the header (and sidebar) will show properly */
 main {
   z-index: -1;
+
+  >section:not(.full-width) {
+    padding-inline: var(--pad-inline);
+  }
 }
 
 /* Default button styling */
@@ -97,51 +99,6 @@ button:active {
   svg:hover {
     fill: var(--main-white--hover);
   }
-}
-
-/*
-  Main content padding and such
-  inspired from Kevin Powell
-  (https://youtu.be/c13gpBrnGEw)
-*/
-.content-grid {
-  --content-max-width: 85ch;
-  --breakout-max-width: 110ch;
-  --breakout-size: calc((var(--breakout-max-width) - var(--content-max-width)) / 2);
-}
-
-.content-grid,
-.content-grid>.full-width {
-  display: grid;
-  grid-template-columns:
-    [full-width-start] minmax(var(--pad-inline), 1fr)
-    [breakout-start] minmax(0, var(--breakout-size))
-    [content-start] min(100% - (var(--pad-inline) * 2), var(--content-max-width)) [content-end]
-    minmax(0, var(--breakout-size)) [breakout-end]
-    minmax(var(--pad-inline), 1fr) [full-width-end];
-}
-
-.content-grid>:not(.full-width),
-.full-width>:not(.full-width) {
-  grid-column: content;
-}
-
-.content-grid>.breakout,
-.full-width>.breakout {
-  grid-column: breakout;
-}
-
-.content-grid>.full-width,
-.full-width>.full-width {
-  grid-column: full-width;
-}
-
-.content-grid>.full-width.breakout>* {
-  grid-column: breakout;
-}
-
-.content-grid>.breakout>.content {
-  grid-column: content;
 }
 
 /* Optional padding */
@@ -480,7 +437,6 @@ aside .dropdown:hover .dropdown__menu {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  grid-column: full-width;
 
   .floater--block__title,
   .floater--block__subtext {
@@ -513,14 +469,5 @@ aside .dropdown:hover .dropdown__menu {
   }
   aside {
     display: block;
-  }
-}
-
-@media screen and (max-width: 1100px) {
-  .floater--container>.floater--block {
-    margin-block: 1rem;
-    grid-column: breakout;
-    width: unset;
-    clip-path: unset;
   }
 }
