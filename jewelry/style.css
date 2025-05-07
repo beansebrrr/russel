@@ -4,25 +4,31 @@
   scroll-behavior: smooth;
 }
 
+body {
+  background-color: var(--accent-orange);
+}
+
 .banner {
-  --_bg-image: var(--bg-image, var(--accent-orange));
+  --_bg-image: var(--bg-image, transparent);
   --_clr-text: var(--clr-text, var(--text-white));
   --_clr-text-shadow: var(--clr-text-shadow, var(--text-black));
 
-  background: var(--_bg-image);
+  background: linear-gradient(#ff550050, #ff550050), var(--_bg-image);
+  background-attachment: fixed;
   color: var(--_clr-text);
-  box-shadow: inset var(--_clr-text-shadow) 0 0 24px -10px;
+  box-shadow:
+    inset var(--_clr-text-shadow) 0 0 24px -10px;
   background-size: cover;
   background-position: center;
-  place-items: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 2rem var(--pad-inline);
   z-index: -1;
-  height: fit-content;
+  height: 15vh;
   
   h1 {
     text-align: center;
-    width: 100%;
-    height: 100%;
     font-size: 2em;
     margin: 0;
     text-shadow: var(--_clr-text-shadow) 0 1px 8px;
@@ -32,7 +38,7 @@
 .shop-grid {
   background-color: var(--main-white);
   margin: 0;
-  padding: 0;
+  padding: 0 var(--pad-inline);
   padding-block: 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 24%));
@@ -42,6 +48,9 @@
 }
 
 .subtext {
+  background-color: var(--main-white);
+  margin: 0;
+  padding: 1rem var(--pad-inline);
   text-align: center;
   font-size: 0.9em;
   color: #555555;
