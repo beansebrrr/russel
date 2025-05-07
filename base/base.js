@@ -1,7 +1,7 @@
 function setupSidebar(headerSelector) {
   // Select the appropriate html elements
   const headerElement = document.querySelector(headerSelector)
-  const navLists = headerElement.querySelectorAll("ul.nav-list")
+  const navLists = headerElement.querySelectorAll(".nav-list")
   const sidebar = headerElement.querySelector("aside")
   const sidebarOpen = headerElement.querySelector(".sidebar-open")
   const sidebarClose = headerElement.querySelector(".sidebar-close")

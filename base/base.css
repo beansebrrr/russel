@@ -13,6 +13,7 @@
   --text-accent: var(--accent-orange);
 
   --pad-inline: max(8%, 1rem);
+  --pad-block: 2rem;
 }
 
 /* When you highlight text, it uses a different color now */
@@ -32,8 +33,15 @@ body {
 main {
   z-index: -1;
 
-  >section:not(.full-width) {
+  >* {
     padding-inline: var(--pad-inline);
+    padding-block: var(--pad-block);
+  }
+  >.full-width {
+    padding-inline: 0;
+  }
+  >.no-pady {
+    padding-block: 0;
   }
 }
 
@@ -98,14 +106,6 @@ a.text-link {
   svg:hover {
     fill: var(--main-white--hover);
   }
-}
-
-/* Optional padding */
-.padding-y {
-  padding-block: 2rem;
-}
-.margin-y {
-  margin-block: 2rem;
 }
 
 /* Header and Footer styling */
@@ -417,13 +417,14 @@ aside .dropdown:hover .dropdown__menu {
   }
 }
 
-.floater--container {
+section.floater--container {
   --_background: var(--background, var(--accent-orange));
   --_block-background: var(--block-background, var(--main-white--hover));
   --_clr-text: var(--clr-text, var(--text-black));
 
   background: var(--_background);
   color: var(--_clr-text);
+  padding-block: 0;
   height: 90vh;
 }
 

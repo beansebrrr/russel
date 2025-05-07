@@ -1,19 +1,16 @@
 @import url(/base/base.css);
 
 .hero {
-  min-height: 100vh;
+  min-height: calc(100vh - (var(--pad-block) * 2));
   background:
     radial-gradient(transparent 50%, #000000b0),
     url(./images/hero-background.jpg);
   background-position: center;
   color: var(--text-white);
-  place-items: end start;
-  
-  span {
-    position: absolute;
-    bottom: 5%;
-    left: var(--pad-inline);
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: start;
 
   .hero__text,
   .hero__subtext {
@@ -29,6 +26,7 @@
     font-size: 1.25rem;
   }
 }
+
 .overview {
   min-height: 90vh;
   background: url(./images/workstation.jpg);

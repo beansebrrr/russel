@@ -4,12 +4,12 @@
   scroll-behavior: smooth;
 }
 
-body {
-  background-color: var(--accent-orange);
+main>section {
+  padding-block: 0;
 }
 
 .banner {
-  --_bg-image: var(--bg-image, transparent);
+  --_bg-image: var(--bg-image, var(--accent-orange));
   --_clr-text: var(--clr-text, var(--text-white));
   --_clr-text-shadow: var(--clr-text-shadow, var(--text-black));
 
