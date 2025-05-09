@@ -45,6 +45,12 @@ main {
   }
 }
 
+section {
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
 /* Default button styling */
 button {
   --_btn-color: var(--btn-color, var(--accent-orange));
@@ -91,20 +97,6 @@ a.text-link {
     width: 100%;
     left: 0;
     transform: 0;
-  }
-}
-
-.socials {
-  display: flex;
-  fill: var(--text-white);
-  gap: 2rem;
-
-  svg {
-    height: 2rem;
-  }
-
-  svg:hover {
-    fill: var(--main-white--hover);
   }
 }
 
@@ -200,27 +192,6 @@ footer {
   font-size: 0.9rem;
 }
 
-/* Navigation sidebar (for smaller screens) */
-aside {
-  display: none;
-  padding-block: 2rem;
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100vh;
-  width: max(30%, 300px);
-  background-color: #ffffff99;
-  backdrop-filter: blur(1rem);
-  box-shadow: var(--_shadow);
-  transition: transform 300ms ease, visibility 300ms ease;
-  z-index: inherit;
-  
-  &.hidden {
-    transform: translateX(100%);
-    visibility: hidden;
-  }
-}
-
 /* List of links in the header */
 .nav-list {
   color: var(--clr-text);
@@ -247,47 +218,6 @@ aside {
   svg {
     display: block;
   }
-}
-
-/* List of links in the sidebar */
-aside .nav-list {
-  --clr-text: var(--text-black);
-  text-align: end;
-  flex-direction: column;
-  place-items: start;
-  width: 100%;
-  gap: 0;
-  
-  li {
-    width: 100%;
-  }
-  li a {
-    display: block;
-    padding: 1rem 3rem;
-  }
-
-  li:hover {
-    background-color: #00000010;
-  }
-
-  svg {
-    display: none;
-  }
-
-  .label {
-    display: block;
-  }
-}
-
-.sidebar-close {
-  display: block;
-  margin-inline: auto 3rem;
-
-}
-
-aside .dropdown__menu,
-aside .dropdown:hover .dropdown__menu {
-  display: none;
 }
 
 /* Dropdowns */
@@ -328,6 +258,66 @@ aside .dropdown:hover .dropdown__menu {
   visibility: visible;
 }
 
+/* Navigation sidebar (for smaller screens) */
+aside {
+  /* display: none; */
+  padding-block: 2rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: max(30%, 300px);
+  background-color: #ffffff99;
+  backdrop-filter: blur(1rem);
+  box-shadow: var(--_shadow);
+  transition: transform 300ms ease, visibility 300ms ease;
+  z-index: inherit;
+  
+  &.hidden {
+    transform: translateX(100%);
+    visibility: hidden;
+  }
+}
+
+/* List of links in the sidebar */
+aside .nav-list {
+  --clr-text: var(--text-black);
+  text-align: end;
+  flex-direction: column;
+  place-items: start;
+  width: 100%;
+  gap: 0;
+  
+  li {
+    width: 100%;
+  }
+  li a {
+    display: block;
+    padding: 1rem 3rem;
+  }
+
+  li:hover {
+    background-color: #00000010;
+  }
+
+  svg {
+    display: none;
+  }
+
+  .label {
+    display: block;
+  }
+}
+
+.sidebar-close {
+  display: block;
+  margin-inline: auto 3rem;
+}
+
+aside .dropdown__menu,
+aside .dropdown:hover .dropdown__menu {
+  display: none;
+}
 
 /* Horizontal scrollers, found in homescreen */
 .horizontal-scroller {
@@ -347,9 +337,12 @@ aside .dropdown:hover .dropdown__menu {
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   
+
+  >* {
+    scroll-snap-stop: always;
+  }
   >:not(:first-child, :last-child) {
     scroll-snap-align: center;
-    scroll-snap-stop: always;
   }
   >:first-child {
     scroll-snap-align: start;
@@ -361,13 +354,15 @@ aside .dropdown:hover .dropdown__menu {
 
 /* Grids, also found in homescreen */
 .flex-grid {
+  --_clr-text: var(--clr-text, var(--main-white));
+  --_flex-gap: var(--flex-gap, 0.5rem);
   list-style-type: none;
   margin: 0;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  gap: 0.5rem;
+  gap: var(--_flex-gap);
 
   li {
     margin: 0;
@@ -378,6 +373,11 @@ aside .dropdown:hover .dropdown__menu {
   a {
     color: inherit;
     text-decoration: none;
+  }
+
+  svg {
+    width: 2rem;
+    fill: var(--_clr-text);
   }
 }
 
@@ -417,7 +417,7 @@ aside .dropdown:hover .dropdown__menu {
   }
 }
 
-section.floater--container {
+.floater--container {
   --_background: var(--background, var(--accent-orange));
   --_block-background: var(--block-background, var(--main-white--hover));
   --_clr-text: var(--clr-text, var(--text-black));
@@ -457,6 +457,10 @@ section.floater--container {
 .card:hover .card__title,
 .card:hover .card__subtitle {
   color: var(--_text-hover);
+}
+
+.socials {
+  --flex-gap: 2rem;
 }
 
 @media screen and (max-width: 900px) {
