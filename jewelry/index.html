@@ -11,7 +11,9 @@
 </head>
 <body>
   <header>
+
     <ul class="nav-list header--left">
+      <!-- This link has a dropdown menu that shows whenever the cursor hovers on it. -->
       <li class="dropdown"><a href="/jewelry">Jewelry</a>
         <ul class="dropdown__menu">
           <li><a href="#rings">Rings</a></li>
@@ -21,9 +23,12 @@
         </ul>
       </li>
       <li><a href="/about">About</a></li>
-      <li><a href="#">The workshop</a></li>
+      <li><a href="/stories">Stories</a></li>
     </ul>
+    <!-- Logo -->
     <a href="/" class="header--center"><img class="logo" src="/base/assets/logo-black.svg" alt="Russel"></a>
+
+    <!-- Icon links. For now, they don't actually lead anywhere. -->
     <ul class="nav-list header--right">
       <li><a href="#">
         <svg height="24px" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -41,6 +46,8 @@
         </svg><span class="label">Account</span>
       </a></li>
     </ul>
+
+    <!-- When the screen is small enough, the navigation links get moved to the <aside> tag and the sidebar toggles are enabled -->
     <button class="sidebar-open"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
       <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
     </svg>

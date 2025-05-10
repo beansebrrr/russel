@@ -433,7 +433,7 @@ aside .dropdown:hover .dropdown__menu {
   background: var(--_background);
   color: var(--_clr-text);
   padding-block: 0;
-  height: 90vh;
+  min-height: 90vh;
   display: flex;
 }
 
@@ -447,7 +447,6 @@ aside .dropdown:hover .dropdown__menu {
   box-shadow: hsla(0, 100%, 10%, 0.5) 0 0 24px;
   clip-path: inset(0 -24px 0 0);
   width: calc(var(--_block-width) - (var(--pad-inline) * 2) - (var(--_block-margin) * 2));
-  height: calc(100% - (var(--_block-pad-x) * 2) - (var(--_block-margin) * 2));
   display: flex;
   flex-direction: column;
   justify-content: center;

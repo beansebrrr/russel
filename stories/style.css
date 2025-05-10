@@ -1,0 +1,60 @@
+@import url(/base/base.css);
+
+.content-grid {
+  --gap: clamp(1rem, 6vw, 3rem);
+  --full: minmax(var(--gap), 1fr);
+  --content: min(65ch, 100% - var(--gap) * 2);
+  --popout: minmax(0, 2rem);
+
+  display: grid;
+  grid-template-columns:
+    [full-start] var(--full)
+    [popout-start] var(--popout)
+    [content-start] var(--content) [content-end]
+    var(--popout) [popout-end]
+    var(--full) [full-end];
+}
+
+.content-grid img {
+  margin-bottom: 1rem;
+  border-radius: 2px;
+  box-shadow: #00000040 0 4px 12px;
+
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.content-grid > * {
+  grid-column: content;
+
+  margin-top: 0;
+}
+
+.popout {
+  grid-column: popout;
+}
+
+.full {
+  grid-column: full;
+}
+
+.quote {
+  grid-column: popout;
+  font-style: italic;
+}
+
+.date {
+  color: var(--accent-orange);
+  font-size: 0.9rem;
+}
+
+.signature {
+  text-align: end;
+  color: var(--accent-orange);
+}
+
+.etc {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555555;
+}
