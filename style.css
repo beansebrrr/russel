@@ -28,8 +28,13 @@
 
 .overview {
   min-height: 90vh;
-  background: url(./images/workstation.jpg);
-  box-shadow: inset #000000aa 0 0 10rem;
+  background: linear-gradient(#f506, #f506), url(./images/workstation.jpg);
+  /* box-shadow: inset #000000aa 0 0 10rem; */
+  color: var(--text-white);
+  text-shadow: hsla(10, 100%, 30%, 0.70) 0 0 4px;
+  >* {
+    max-width: 75ch;
+  }
 }
 
 .call-to-action {

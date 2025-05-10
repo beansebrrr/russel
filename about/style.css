@@ -5,6 +5,26 @@ section:not(.floater--container),
   padding-block: 2rem;
 }
 
+#introduction {
+  display: grid;
+  grid-template-columns: [full-width-start] 1fr 65ch [full-width-end];
+  column-gap: 1rem;
+
+  h1 {
+    grid-column: full-width;
+    text-align: center;
+  }
+
+  p {
+    margin-top: 0;
+  }
+}
+
+.photocard {
+  --img-border-width: 16px;
+  box-shadow: #00000060 0 4px 12px;
+}
+
 .history {
   --background: url(/images/workstation-2.jpg);
   --block-background: hsla(20, 100%, 50%, 0.75);

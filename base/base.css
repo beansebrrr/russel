@@ -51,6 +51,14 @@ section {
   background-size: cover !important;
 }
 
+section>img {
+  --_img-border-width: var(--img-border-width, 0px);
+  display: block;
+  margin: auto;
+  width: calc(100% - (var(--_img-border-width) * 2));
+  border: var(--main-white) solid var(--_img-border-width);
+}
+
 /* Default button styling */
 button {
   --_btn-color: var(--btn-color, var(--accent-orange));
@@ -426,18 +434,20 @@ aside .dropdown:hover .dropdown__menu {
   color: var(--_clr-text);
   padding-block: 0;
   height: 90vh;
+  display: flex;
 }
 
 .floater--container>.floater--block {
   --_block-pad-x: 2rem;
   --_block-width: 50%;
+  --_block-margin: 0rem;
   background: var(--_block-background);
   padding-inline: var(--pad-inline);
   padding-block: var(--_block-pad-x);
   box-shadow: hsla(0, 100%, 10%, 0.5) 0 0 24px;
   clip-path: inset(0 -24px 0 0);
-  width: calc(var(--_block-width) - (var(--pad-inline) * 2));
-  height: calc(100% - (var(--_block-pad-x) * 2));
+  width: calc(var(--_block-width) - (var(--pad-inline) * 2) - (var(--_block-margin) * 2));
+  height: calc(100% - (var(--_block-pad-x) * 2) - (var(--_block-margin) * 2));
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -482,7 +492,12 @@ aside .dropdown:hover .dropdown__menu {
 }
 
 @media screen and (max-width: 1100px) {
+  .floater--container {
+    justify-content: center;
+    align-items: center;
+  }
   .floater--container>.floater--block {
     --_block-width: 100%;
+    --_block-margin: 2rem;
   }
 }
