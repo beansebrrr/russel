@@ -60,22 +60,27 @@ section>img {
 }
 
 /* Default button styling */
+
 button {
-  --_btn-color: var(--btn-color, var(--accent-orange));
+  --_btn-color: var(--btn-color, var(--main-black));
   --_btn-text: var(--btn-text, var(--text-white));
   width: fit-content;
   display: block;
   font-family: unset;
   padding: 0.75em 2em;
   border: none;
+  transition: background-color 200ms ease;
 
   background-color: var(--_btn-color);
   color: var(--_btn-text);
 }
 
+button:hover {
+  --btn-color: var(--accent-orange) !important;
+  --btn-text: var(--text-white) !important;
+}
 button:active {
-  --btn-color: var(--main-black) !important;
-  --btn-text: var(--accent-gold) !important;
+  box-shadow: inset #e44100 0 8px 12px;
 }
 
 /* I only used it on the "Learn more about us" link */

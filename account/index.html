@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Sign up</title>
+  <link rel="stylesheet" href="/account/style.css">
+  <script src="script.js" defer></script>
+  <link rel="shortcut icon" href="/base/assets/logo-small.svg" type="image/x-icon">
+</head>
+<body>
+  <main>
+    <section class="floater--container full-width" id="sign-up-form">
+      <form action="" class="floater--block">
+        <img src="/base/assets/logo-black.svg" alt="Russel" class="logo">
+        <section class="form-container">
+          <div class="form-group">
+            <label for="first-name">First name</label>
+            <input id="first-name" type="text">
+          </div>
+          <div class="form-group">
+            <label for="last-name">Last name</label>
+            <input id="last-name" type="text">
+          </div>
+          <div class="form-group">
+            <label for="email-address">Email address</label>
+            <input id="email-address" type="email">
+            <p class="error-message"></p>
+          </div>
+          <div class="form-group">
+            <label for="phone-number">Phone number</label>
+            <input id="phone-number" type="tel">
+            <p class="error-message"></p>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input id="password" type="password">
+            <p class="error-message"></p>
+          </div>
+          <div class="form-group">
+            <label for="confirm-password">Confirm password</label>
+            <input id="confirm-password" type="password">
+            <p class="error-message"></p>
+          </div>
+        </section>
+        <button type="button" id="btn-submit">Sign up</button>
+        <p>Already have an account? <a href="#" class="text-link">Sign in</a>.</p>
+        <p>Or <a href="/" class="text-link">go home</a>.</p>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,80 @@
+@import url(/base/base.css);
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+
+  &::selection {
+    background-color: var(--accent);
+    color: var(--main-light);
+  }
+}
+
+label {
+  display: block;
+  font-size: 0.9em;
+}
+
+#sign-up-form {
+  --background: linear-gradient(#f504, #f504), url(/images/workstation.jpg);
+  --block-background: #ffffffee;
+  min-height: 100vh;
+}
+
+.logo {
+  margin-bottom: 2rem;
+}
+
+#sign-up-form > .floater--block {
+  display: block;
+  width: 50%;
+  margin-left: auto;
+
+}
+
+.form-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.form-group > label {
+  font-size: 0.8em  ;
+}
+ 
+.form-group > input { 
+  background-color: transparent;
+  width: 100%;
+  border: none;
+  border-bottom: var(--main-black) dotted 2px;
+  padding: 0.5em 2px 0.25em;
+  transition: border-bottom 300ms linear;
+  font-size: 1em;
+  margin-bottom: 1rem;
+
+  &:focus {
+    outline: none;
+    border-bottom: var(--accent-orange) solid 2px;
+  }
+}
+
+p {
+  font-size: 0.9em;
+}
+
+
+.error-message {
+  height: fit-content;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9em;
+  color: red;
+}
+
+@media screen and (max-width: 900px) {
+  .form-container {
+    grid-template-columns: 1fr;
+  }
+}
